@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<JSFFlowViewLayout version="1.0">
+  <Drawing gridVisible="true" snapOn="true" />
+  <JSFFlowResource path="/login.jsp" location="217,186" dimension="104,36" />
+  <JSFFlowResource path="/index.jsp" location="0,312" dimension="104,36" />
+  <JSFFlowResource path="/nowOrder.jsp" location="209,312" dimension="122,36" />
+  <JSFFlowResource path="" location="781,0" dimension="60,36" />
+  <JSFFlowResource path="/adminIndex.jsp" location="396,186" dimension="134,36" />
+  <JSFFlowResource path="/changeInfo.jsp" location="605,186" dimension="134,36" />
+  <JSFFlowResource path="/groupManage.jsp" location="844,186" dimension="140,36" />
+  <JSFFlowResource path="/resList.jsp" location="1059,186" dimension="116,36" />
+  <JSFFlowResource path="/resManage.jsp" location="1343,186" dimension="128,36" />
+  <JSFFlowResource path="/myOrder.jsp" location="227,393" dimension="116,36" />
+  <JSFFlowResource path="/orderDetail.jsp" location="215,504" dimension="140,36" />
+  <JSFFlowResource path="/resOrderList.jsp" location="1044,312" dimension="146,36" />
+  <JSFFlowResource path="/resStatus.jsp" location="1265,312" dimension="128,36" />
+  <JSFFlowResource path="/editRes.jsp" location="1468,312" dimension="116,36" />
+  <JSFFlowResource path="/orderManage.jsp" location="15,393" dimension="140,36" />
+  <JSFFlowResource path="/adminOrderDetail.jsp" location="0,504" dimension="170,36" />
+  <JSFFlowNavigationCase id="/login.jsp,/index.jsp,success,&lt;empty&gt;" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="217,204" />
+      <AbsolutePoint location="52,204" />
+      <AbsolutePoint location="52,312" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id="/login.jsp,/nowOrder.jsp,toOrder,&lt;empty&gt;" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="270,222" />
+      <AbsolutePoint location="270,312" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id="/login.jsp,/login.jsp,fail,&lt;empty&gt;" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="284,186" />
+      <AbsolutePoint location="284,103" />
+      <AbsolutePoint location="377,103" />
+      <AbsolutePoint location="377,204" />
+      <AbsolutePoint location="321,204" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id="/nowOrder.jsp,/nowOrder.jsp,success,&lt;empty&gt;" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="285,312" />
+      <AbsolutePoint location="285,259" />
+      <AbsolutePoint location="463,259" />
+      <AbsolutePoint location="463,330" />
+      <AbsolutePoint location="331,330" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id="/nowOrder.jsp,/login.jsp,LOGIN,&lt;empty&gt;" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="255,312" />
+      <AbsolutePoint location="255,222" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id=",/login.jsp,userLogin,&lt;empty&gt;" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="781,18" />
+      <AbsolutePoint location="269,18" />
+      <AbsolutePoint location="269,186" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id=",/adminIndex.jsp,adminLogin,&lt;empty&gt;" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="781,33" />
+      <AbsolutePoint location="463,33" />
+      <AbsolutePoint location="463,186" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id=",/changeInfo.jsp,goChangeInfo,&lt;empty&gt;" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="811,36" />
+      <AbsolutePoint location="811,204" />
+      <AbsolutePoint location="739,204" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id=",/groupManage.jsp,groupManage,&lt;empty&gt;" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="826,36" />
+      <AbsolutePoint location="826,204" />
+      <AbsolutePoint location="844,204" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id=",/resList.jsp,resList,&lt;empty&gt;" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="841,33" />
+      <AbsolutePoint location="1117,33" />
+      <AbsolutePoint location="1117,186" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id=",/resManage.jsp,resManage,&lt;empty&gt;" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="841,18" />
+      <AbsolutePoint location="1407,18" />
+      <AbsolutePoint location="1407,186" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id="/groupManage.jsp,/groupManage.jsp,success,&lt;empty&gt;" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="914,186" />
+      <AbsolutePoint location="914,148" />
+      <AbsolutePoint location="1006,148" />
+      <AbsolutePoint location="1006,204" />
+      <AbsolutePoint location="984,204" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id="/resList.jsp,/resOrderList.jsp,success,&lt;empty&gt;" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1117,222" />
+      <AbsolutePoint location="1117,312" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id="/resManage.jsp,/resStatus.jsp,resStatus,&lt;empty&gt;" routingType="1">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1350,222" />
+      <AbsolutePoint location="1350,312" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id="/resManage.jsp,/editRes.jsp,success,&lt;empty&gt;" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1407,222" />
+      <AbsolutePoint location="1407,330" />
+      <AbsolutePoint location="1468,330" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id="/myOrder.jsp,/orderDetail.jsp,success,&lt;empty&gt;" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="285,429" />
+      <AbsolutePoint location="285,504" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id="/orderManage.jsp,/adminOrderDetail.jsp,success,&lt;empty&gt;" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="85,429" />
+      <AbsolutePoint location="85,504" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+</JSFFlowViewLayout>
+

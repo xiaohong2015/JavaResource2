@@ -1,0 +1,4 @@
+Microsoft SQL Server JDBC Driver 2.0:该SQL Server驱动不及支持Microsoft SQL Server 2008而且还支持2005、2000。
+
+
+下载地址：http://www.microsoft.com/downloads/details.aspx?familyid=99B21B65-E98F-4A61-B811-19912601FDC9&displaylang=zh-cn

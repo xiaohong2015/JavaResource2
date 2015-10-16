@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<file-systems model-entity="FileSystems" workspace-home="./WebRoot/WEB-INF">
+ <file-system NAME="xsglxt" location="%eclipse.project%" model-entity="FileSystemFolder"/>
+ <web model-entity="JstWeb"/>
+</file-systems>

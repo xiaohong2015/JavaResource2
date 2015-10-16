@@ -1,0 +1,4 @@
+SQL Server 2008数据库:该数据库是微软公司继SQL Server 2005后推出的数据库系统
+
+
+下载地址：http://www.microsoft.com/

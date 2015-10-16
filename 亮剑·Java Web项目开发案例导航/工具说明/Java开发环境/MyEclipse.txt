@@ -1,0 +1,4 @@
+MyEclipse是由Genuitec公司开发一款商业软件，从本质上讲其是基于Eclipse的Java EE方面的插件。
+
+
+下载地址： http://myeclipseide.com/
