@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="servlet_download"
+  id="myeclipse.1265522590171"
+  context-root="/servlet_download"
+  j2ee-spec="1.4"
+  archive="servlet_download.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+
