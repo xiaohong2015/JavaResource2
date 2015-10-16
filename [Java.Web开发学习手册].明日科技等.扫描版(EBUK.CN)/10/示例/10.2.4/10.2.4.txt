@@ -1,0 +1,13 @@
+本书中未提供示例的源程序，特将示例关键代码存放在光盘中的.txt文件里，关键代码如下：
+
+<!-- 注册Servlet -->
+<servlet>
+	<description> Servlet描述信息</description>
+	<servlet-name> Servlet的名称</servlet-name>
+	<servlet-class> Servlet类的完整类名</servlet-class>
+</servlet>
+<!-- Servlet映射 -->
+<servlet-mapping>
+	<servlet-name> Servlet名称</servlet-name>
+	<url-pattern>访问Url地址</url-pattern>
+</servlet-mapping>

@@ -1,0 +1,11 @@
+本书中未提供示例的源程序，特将示例关键代码存放在光盘中的.txt文件里，关键代码如下：
+
+Resource resource = new ClassPathResource("applicationContext.xml");			//装载配置文件
+BeanFactory factory = new XmlBeanFactory(resource);
+Test  test = (Test) factory.getBean("test");									//获取Bean
+ClassPathResource读取XML文件并传参给XmlBeanFactory，applicationContext.xml文件中的代码如下：
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="test" class="com.mr.test.Test"/>
+</beans>

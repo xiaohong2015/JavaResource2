@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.bOS.bPRO_PersonManage.en.Institution" table="tb_institution" lazy="false">
+<id column="id" name="id" type="long">
+<generator class="native"/>
+</id>
+<property column="name" length="50" name="name" type="string"/>
+<property column="reason" length="1000" name="reason" type="string"/>
+<property column="explain" length="1000" name="explain" type="string"/>
+<property column="createtime" length="23" name="createtime" type="timestamp"/>
+</class>
+</hibernate-mapping>

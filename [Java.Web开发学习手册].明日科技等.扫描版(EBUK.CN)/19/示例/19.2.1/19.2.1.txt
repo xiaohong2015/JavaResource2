@@ -1,0 +1,23 @@
+本书中未提供示例的源程序，特将示例关键代码存放在光盘中的.txt文件里，关键代码如下：
+
+public class User {   
+    private String name;
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }  
+}
+
+
+
+public class User {   
+    private String name;
+    public User(String name){           		//构造器
+        this.name=name;                 	//为属性赋值
+    }
+}
+
+
+

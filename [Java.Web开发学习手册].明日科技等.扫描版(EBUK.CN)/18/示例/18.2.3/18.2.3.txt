@@ -1,0 +1,28 @@
+本书中未提供示例的源程序，特将示例关键代码存放在光盘中的.txt文件里，关键代码如下：
+
+public class User {
+	private Integer id;						//用户ID
+	private String name;						//用户名
+	private String password;					//用户密码
+	//默认的构造方法
+	public User(){
+	}
+	public Integer getId() {
+		return id;
+	}
+	public void setId(Integer id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+}

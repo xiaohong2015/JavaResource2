@@ -1,0 +1,15 @@
+本书中未提供示例的源程序，特将示例关键代码存放在光盘中的.txt文件里，关键代码如下：
+
+Connection conn=DriverManager.getConnection(url, username, password);// 建立连接
+//创建执行静态SQL语句的Statement实例
+Statement stmt=conn.createStatement();      // 创建连接状态
+//创建执行动态SQL语句的Statement实例（PrepareStatement实例）
+PreparedStatement ppdstmt = connection
+        .prepareStatement("select * from table where id=?");
+ppdstmt.setInt(1, 6);
+ResultSet rs = ppdstmt.executeQuery();
+//创建执行数据库存储过程的Statement实例（CallableStatement实例）
+CallableStatement cabstmt = connection.prepareCall("{call test_insert(?,?)}");
+cabstmt.setInt(1, 6);
+cabstmt.setString(2, "INSERT");
+int c = cabstmt.executeUpdate();

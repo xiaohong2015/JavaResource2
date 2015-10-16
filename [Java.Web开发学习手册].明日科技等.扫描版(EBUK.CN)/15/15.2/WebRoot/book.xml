@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<books>
+	<book>
+		<id>9787115146892</id>
+		<name>JSP数据库系统开发案例精选</name>
+		<publish>人民邮电出版社</publish>
+		<price>49.00</price>
+	</book>
+	<book>
+		<id>9787115145475</id>
+		<name>JSP数据库开发完全手册</name>
+		<publish>人民邮电出版社</publish>
+		<price>52.00</price>
+	</book>
+</books>

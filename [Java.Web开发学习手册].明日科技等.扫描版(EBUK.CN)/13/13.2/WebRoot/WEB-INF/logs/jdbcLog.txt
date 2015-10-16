@@ -1,0 +1,88 @@
+向DriverManager类注册数据库驱动成功：  2007/05/24  02:40:48
+DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/db_library?user=root&password=root&useUnicode=true")
+    trying driver[className=org.logicalcobwebs.proxool.ProxoolDriver,org.logicalcobwebs.proxool.ProxoolDriver@bf7190]
+    trying driver[className=com.mysql.jdbc.Driver,com.mysql.jdbc.Driver@5e176f]
+java.sql.SQLException: Unable to connect to any hosts due to exception: java.net.ConnectException: Connection refused: connect
+
+** BEGIN NESTED EXCEPTION ** 
+
+java.net.ConnectException
+MESSAGE: Connection refused: connect
+
+STACKTRACE:
+
+java.net.ConnectException: Connection refused: connect
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(Unknown Source)
+	at java.net.PlainSocketImpl.connectToAddress(Unknown Source)
+	at java.net.PlainSocketImpl.connect(Unknown Source)
+	at java.net.SocksSocketImpl.connect(Unknown Source)
+	at java.net.Socket.connect(Unknown Source)
+	at java.net.Socket.connect(Unknown Source)
+	at java.net.Socket.<init>(Unknown Source)
+	at java.net.Socket.<init>(Unknown Source)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:124)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:225)
+	at com.mysql.jdbc.Connection.createNewIO(Connection.java:1783)
+	at com.mysql.jdbc.Connection.<init>(Connection.java:450)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:411)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at org.logicalcobwebs.proxool.ProxyFactory.buildProxyConnection(ProxyFactory.java:41)
+	at org.logicalcobwebs.proxool.Prototyper.buildConnection(Prototyper.java:150)
+	at org.logicalcobwebs.proxool.Prototyper.sweep(Prototyper.java:95)
+	at org.logicalcobwebs.proxool.PrototyperThread.run(PrototyperThread.java:42)
+
+
+** END NESTED EXCEPTION **
+
+
+	at com.mysql.jdbc.Connection.createNewIO(Connection.java:1851)
+	at com.mysql.jdbc.Connection.<init>(Connection.java:450)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:411)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at org.logicalcobwebs.proxool.ProxyFactory.buildProxyConnection(ProxyFactory.java:41)
+	at org.logicalcobwebs.proxool.Prototyper.buildConnection(Prototyper.java:150)
+	at org.logicalcobwebs.proxool.Prototyper.sweep(Prototyper.java:95)
+	at org.logicalcobwebs.proxool.PrototyperThread.run(PrototyperThread.java:42)
+SQLException: SQLState(08S01)
+    skipping: driver[className=com.mysql.jdbc.Driver,com.mysql.jdbc.Driver@14e8cee]
+    skipping: driver[className=com.microsoft.jdbc.sqlserver.SQLServerDriver,com.microsoft.jdbc.sqlserver.SQLServerDriver@b1cc87]
+    trying driver[className=com.microsoft.jdbc.sqlserver.SQLServerDriver,com.microsoft.jdbc.sqlserver.SQLServerDriver@50a649]
+    skipping: driver[className=com.microsoft.jdbc.sqlserver.SQLServerDriver,com.microsoft.jdbc.sqlserver.SQLServerDriver@e3849c]
+getConnection failed: java.sql.SQLException: Unable to connect to any hosts due to exception: java.net.ConnectException: Connection refused: connect
+
+** BEGIN NESTED EXCEPTION ** 
+
+java.net.ConnectException
+MESSAGE: Connection refused: connect
+
+STACKTRACE:
+
+java.net.ConnectException: Connection refused: connect
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.PlainSocketImpl.doConnect(Unknown Source)
+	at java.net.PlainSocketImpl.connectToAddress(Unknown Source)
+	at java.net.PlainSocketImpl.connect(Unknown Source)
+	at java.net.SocksSocketImpl.connect(Unknown Source)
+	at java.net.Socket.connect(Unknown Source)
+	at java.net.Socket.connect(Unknown Source)
+	at java.net.Socket.<init>(Unknown Source)
+	at java.net.Socket.<init>(Unknown Source)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:124)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:225)
+	at com.mysql.jdbc.Connection.createNewIO(Connection.java:1783)
+	at com.mysql.jdbc.Connection.<init>(Connection.java:450)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:411)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at org.logicalcobwebs.proxool.ProxyFactory.buildProxyConnection(ProxyFactory.java:41)
+	at org.logicalcobwebs.proxool.Prototyper.buildConnection(Prototyper.java:150)
+	at org.logicalcobwebs.proxool.Prototyper.sweep(Prototyper.java:95)
+	at org.logicalcobwebs.proxool.PrototyperThread.run(PrototyperThread.java:42)
+
+
+** END NESTED EXCEPTION **
+
+

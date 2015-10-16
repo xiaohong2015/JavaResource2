@@ -1,0 +1,13 @@
+本书中未提供示例的源程序，特将示例关键代码存放在光盘中的.txt文件里，关键代码如下：
+
+  if (window.XMLHttpRequest) { // Mozilla、Safari…
+        http_request = new XMLHttpRequest();
+    } else if (window.ActiveXObject) { // IE浏览器
+        try {
+            http_request = new ActiveXObject("Msxml2.XMLHTTP");
+        } catch (e) {
+            try {
+                http_request = new ActiveXObject("Microsoft.XMLHTTP");
+           } catch (e) {}
+        }
+    }

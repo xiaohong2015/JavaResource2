@@ -1,0 +1,1 @@
+本程序使用到了mysql-connector-java-5.1.6-bin.jar、sqljdbc.jar包，由于不是本公司自主开发的，请读者自行下载。

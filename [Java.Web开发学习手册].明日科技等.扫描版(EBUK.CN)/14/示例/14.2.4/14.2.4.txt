@@ -1,0 +1,13 @@
+本书中未提供示例的源程序，特将示例关键代码存放在光盘中的.txt文件里，关键代码如下：
+
+initialize(ServletConfig config, HttpServletRequest request, HttpServletResponse response)。
+initialize(ServletContext application, HttpSession session,
+ 			HttpServletRequest request, HttpServletResponse response, JspWriter out)。
+initialize(PageContext pageContext)。
+
+
+
+① downloadFile(String sourceFilePathName) 。
+② downloadFile(String sourceFilePathName, String contentType) 。
+③ downloadFile(String sourceFilePathName, String contentType, String destFileName) 。
+④downloadFile(String sourceFilePathName, String contentType, String destFileName, int blockSize)。

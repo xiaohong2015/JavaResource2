@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.bOS.bPRO_PersonManage.en.Job" table="tb_job" lazy="false">
+<id column="id" name="id" type="long">
+<generator class="native"/>
+</id>
+<property column="name" length="50" name="name" type="string" />
+<property column="sex" length="1" name="sex" type="byte"/>
+<property column="age" length="10" name="age" type="integer"/>
+<property column="job" length="50" name="job" type="string"/>
+<property column="specialty" length="50" name="specialty" type="string"/>
+<property column="experience" length="50" name="experience" type="string"/>
+<property column="studyeffort" length="50" name="studyeffort" type="string"/>
+<property column="school" length="50" name="school" type="string"/>
+<property column="tel" length="50" name="tel" type="string"/>
+<property column="email" length="50" name="email" type="string"/>
+<property column="createtime" length="23" name="createtime" type="timestamp"/>
+<property column="content" length="1073741823" name="content" type="string"/>
+<property column="isstock" length="1" name="isstock" type="byte"/>
+</class>
+</hibernate-mapping>

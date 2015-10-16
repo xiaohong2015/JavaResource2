@@ -1,0 +1,13 @@
+本书中未提供示例的源程序，特将示例关键代码存放在光盘中的.txt文件里，关键代码如下：
+
+aspect AjStyleAspect
+{
+    //切入点定义
+    pointcut query()：call(public * get*(...));
+    pointcut delete()：execution(public void delete(...));
+    ...
+    //通知
+    before():query(){...}
+    after returnint:delete(){...}
+    ...
+}

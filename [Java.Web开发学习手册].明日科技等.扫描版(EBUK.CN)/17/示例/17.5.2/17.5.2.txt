@@ -1,0 +1,26 @@
+本书中未提供示例的源程序，特将示例关键代码存放在光盘中的.txt文件里，关键代码如下：
+
+public class UserAction extends ActionSupport {
+	private User user;
+	@Override
+	public String execute() throws Exception {
+		return SUCCESS;
+	}
+	public User getUser() {
+		return user;
+	}
+	public void setUser(User user) {
+		this.user = user;
+	}
+}
+
+
+<body>
+	<h2>用户注册</h2>
+	<s:form action="userAction" method="post">
+		<s:textfield name="user.name" label="用户名"></s:textfield>
+		<s:password name="user.password" label="密码" ></s:password>
+		<s:radio name="user.sex" list="#{1 : '男', 0 : '女'}" label="性别" ></s:radio>
+		<s:submit value="注册"></s:submit>
+	</s:form>
+</body>

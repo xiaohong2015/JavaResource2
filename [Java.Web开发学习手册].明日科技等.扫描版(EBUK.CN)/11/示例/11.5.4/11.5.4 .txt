@@ -1,0 +1,35 @@
+本书中未提供示例的源程序，特将示例关键代码存放在光盘中的.txt文件里，关键代码如下：
+
+<%
+request.setAttribute("userName","mr"); 	//定义request范围内的变量userName
+%>
+${requestScope.userName}
+
+
+<%
+session.setAttribute("manager","mr"); 	//定义session范围内的变量manager
+%>
+${sessionScope.manager}
+
+
+<%
+application.setAttribute("message","欢迎光临丫丫聊天室！"); 		//定义application范围内的变量message
+%>
+${applicationScope.message}
+
+
+<input name="affect" type="checkbox" id="affect" value="登山">
+登山 
+<input name="affect" type="checkbox" id="affect" value="游泳">
+游泳 
+<input name="affect" type="checkbox" id="affect" value="慢走">
+慢走
+<input name="affect" type="checkbox" id="affect" value="晨跑">
+晨跑
+
+
+
+<context-param>
+   <param-name>author</param-name>
+   <param-value>mr</param-value>
+</context-param>

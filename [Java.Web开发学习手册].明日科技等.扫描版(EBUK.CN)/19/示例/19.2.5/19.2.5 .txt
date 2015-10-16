@@ -1,0 +1,10 @@
+本书中未提供示例的源程序，特将示例关键代码存放在光盘中的.txt文件里，关键代码如下：
+
+<!--定义学生匿名内部类-->
+<bean id="school" class="School">
+	<property name="student">
+		<bean class="Student"/>		
+	</property>
+</bean>
+
+

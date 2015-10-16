@@ -1,0 +1,18 @@
+本书中未提供示例的源程序，特将示例关键代码存放在光盘中的.txt文件里，关键代码如下：
+
+<!-- 深入静态切入点 -->
+<bean id=" pointcutAdvisor "
+	class="org.springframework.aop.support.RegexpMethodPointcutAdvisor">
+	<property name="patterns">
+		<list>
+			<value>.*execute.*</value><!-- 指定切入点 -->
+		</list>
+	</property>
+</bean>
+
+
+
+
+public bollean matches(Method method,Class targetClass){
+        return(method.getName().equals("execute"));			//匹配切入点成功
+}

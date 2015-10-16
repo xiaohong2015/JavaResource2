@@ -1,0 +1,28 @@
+本书中未提供示例的源程序，特将示例关键代码存放在光盘中的.txt文件里，关键代码如下：
+
+private long[] values = new long[6];                      	// long型数组
+private List<Object> list = new ArrayList<Object>();      		// List型数组
+protected long[] getValues() {
+    return values;
+}
+protected void setValues(long[] values) {      				// 为long型数组赋值
+    this.values = values;
+}
+protected long getValues(int index) {
+    return values[index];
+}
+protected void setValues(int index, long value) {      		// 为long型数组的某个元素赋值
+    this.values[index] = value;
+}
+protected List<Object> getList() {
+    return list;
+}
+protected void setList(List<Object> list) {      				// 为List型数组赋值
+    this.list = list;
+}
+protected Object getList(int index) {
+return list.get(index);
+}
+protected void setList(int index, Object element) {      		// 为List型数组的某个元素赋值
+    this.list.set(index, element);
+}

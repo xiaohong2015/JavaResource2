@@ -1,0 +1,7 @@
+本书中未提供示例的源程序，特将示例关键代码存放在光盘中的.txt文件里，关键代码如下：
+
+PreparedStatement ps = connection.prepareStatement("select * from table_name where id>? and (name=? or name=?)");
+ps.setInt(1, 6);
+ps.setString(2, "B");
+ps.setObject(3, "D");
+ResultSet rs = ps.executeQuery();

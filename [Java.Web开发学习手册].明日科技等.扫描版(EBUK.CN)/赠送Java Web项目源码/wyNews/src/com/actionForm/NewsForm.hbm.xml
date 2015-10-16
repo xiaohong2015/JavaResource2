@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+ <class name="com.actionForm.NewsForm" table="tb_news">
+    <id name="id" column="id" type="int">
+      <generator class="native"/>
+    </id>
+    <property name="sortId"  column="sortId"  type="int" />
+    <property name="content"  column="content"  type="string" />
+    <property name="createTime"  column="createTime"  type="string" />
+    <property name="bigSort"  column="bigSort"  type="string" />
+    <property name="title"  column="title"  type="string" />
+    <property name="showNews"  column="showNews"  type="string" />
+  </class>
+</hibernate-mapping>

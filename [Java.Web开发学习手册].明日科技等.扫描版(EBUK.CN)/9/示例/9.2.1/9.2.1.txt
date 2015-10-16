@@ -1,0 +1,30 @@
+private int id;                 		// int型变量
+本书中未提供示例的源程序，特将示例关键代码存放在光盘中的.txt文件里，关键代码如下：
+
+private String name;           	// String型变量
+private boolean man;           	// boolean型变量
+private boolean married;      		// boolean型变量
+protected int getId() {
+    return id;
+}
+protected void setId(int id) {
+    this.id = id;
+}
+protected String getName() {
+    return name;
+}
+protected void setName(String name) {
+    this.name = name;
+}
+protected boolean getMan() {      	// 为boolean型变量sex提供的是getMan()方法
+    return man;
+}
+protected void setMan(boolean man) {
+    this.man = man;
+}
+protected boolean isMarried() {      // 为boolean型变量married提供的是isMarried()方法
+    return married;
+}
+protected void setMarried(boolean married) {
+    this.married = married;
+}

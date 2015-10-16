@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.bOS.bPRO_PersonManage.en.Stipend" table="tb_stipend" lazy="false">
+<id column="id" name="id" type="long">
+<generator class="native"/>
+</id>
+<property column="name" length="50" name="name" type="string"/>
+<property column="basic" length="53" name="basic" type="float"/>
+<property column="eat" length="53" name="eat" type="float"/>
+<property column="house" length="53" name="house" type="float"/>
+<property column="granttime" length="23" name="granttime" type="timestamp"/>
+<property column="duty" length="53" name="duty" type="float"/>
+<property column="scot" length="53" name="scot" type="float"/>
+<property column="punishment" length="53" name="punishment" type="float"/>
+<property column="other" length="53" name="other" type="float"/>
+<property column="totalize" length="53" name="totalize" type="float"/>
+</class>
+</hibernate-mapping>

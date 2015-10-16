@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-configuration
+          PUBLIC "-//Hibernate/Hibernate Configuration DTD//EN"
+          "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="connection.driver_class">com.microsoft.jdbc.sqlserver.SQLServerDriver</property>
+    <property name="connection.url">jdbc:microsoft:sqlserver://localhost:1433;DatabaseName=db_wyNews</property>
+    <property name="connection.username">sa</property>
+    <property name="connection.password"></property>
+    <property name="show_sql">false</property>
+    <mapping resource="com/actionForm/SortForm.hbm.xml"/>
+    <mapping resource="com/actionForm/NewsForm.hbm.xml"/>
+    <mapping resource="com/actionForm/AfficheForm.hbm.xml"/>
+    <mapping resource="com/actionForm/ForceForm.hbm.xml"/>
+    <mapping resource="com/actionForm/ManagerForm.hbm.xml"/>
+  </session-factory>
+</hibernate-configuration>

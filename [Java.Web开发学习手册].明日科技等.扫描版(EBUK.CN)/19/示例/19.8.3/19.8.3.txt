@@ -1,0 +1,39 @@
+本书中未提供示例的源程序，特将示例关键代码存放在光盘中的.txt文件里，关键代码如下：
+
+public TestAdvice implements MethodInterceptor {
+	public Object invoke(MethodInvocation mi) throws Throwable {
+      	Object Val=mi.proceed();
+      	return Val;
+     }
+}
+
+
+
+matches ()方法和getClassFilter()方法，实现自己定义的切入点。关键代码如下：
+public class TestStaticPointcut extends StaticMethodMatcherPointcut {
+  	public boolean matches (Method method Class targetClass){
+    		return (“targetMethod”.equals(method.getName()));
+  	}
+  	public ClassFilter getClassFilter() {
+    		return new ClassFilter() {
+      		public boolean matches(Class clazz) {
+        			return (clazz==targetClass.class);
+			}
+    		};
+	}
+}
+
+
+
+Pointcut pointcut=new TestStaticPointcut ();                         //创建一个切入点
+Advice advice=new TestAdvice ();                                  //创建一个通知
+
+
+
+Target target =new Target();										//创建一个目标对象的实例
+ProxyFactory proxy= new ProxyFactory();
+proxy.setTarget(target);											//target为目标对象
+//前面已经对“advisor”做了配置，现在需要将“advisor”设置在代理工厂里
+proxy.setAdivsor(advisor); 
+Target proxy = (Target) proxy.getProxy();
+Proxy.……//此处省略的是代理调用目标对象的方法，目的是实施拦截注入通知

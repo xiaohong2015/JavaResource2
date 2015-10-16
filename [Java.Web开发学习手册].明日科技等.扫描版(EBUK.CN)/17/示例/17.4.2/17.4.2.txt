@@ -1,0 +1,8 @@
+本书中未提供示例的源程序，特将示例关键代码存放在光盘中的.txt文件里，关键代码如下：
+
+<struts>
+	<!-- 声明包 -->
+    <package name="user" extends="struts-default" namespace="/user">
+    	...
+    </package>
+</struts>

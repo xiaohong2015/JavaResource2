@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+
+  <form-beans>
+    <form-bean name="sortForm" type="com.actionForm.SortForm" />
+    <form-bean name="newsForm" type="com.actionForm.NewsForm" />
+    <form-bean name="afficheForm" type="com.actionForm.AfficheForm" />
+    <form-bean name="forceForm" type="com.actionForm.ForceForm" />
+    <form-bean name="managerForm" type="com.actionForm.ManagerForm" />
+  </form-beans>
+   
+  <action-mappings>
+    <!--设置用户模块的Action  -->
+    <action name="managerForm" parameter="method"  path="/managerAction" scope="request" type="com.action.ManagerAction" validate="true" >
+          <forward name="checkManagerAction" path="/land_checkManager.jsp"/>                  <!-- 返回的是用户登录的结果页面 -->
+          <forward name="resultManagerAction" path="/b_managerResult.jsp"/>                   <!-- 返回的是用户添加页面 -->     
+          <forward name="selectManagerAction" path="/b_managerQueryList.jsp"/>                <!-- 返回的是用户查看页面 -->
+          <forward name="updateManagerAction" path="/b_managerUpdate.jsp"/>                   <!-- 返回的是用户修改页面 -->
+    </action>
+    <!--设置公告模块的Action  -->
+   <action name="afficheForm" parameter="method" path="/afficheAction" scope="request" type="com.action.AfficheAction" validate="true">
+      <forward name="selectAfficheAction" path="/b_afficheSelect.jsp" />                      <!-- 返回的是公告查看页面 -->
+      <forward name="resultAfficheAction" path="/b_afficheInsert.jsp" />		              <!-- 返回的是公告添加页面 -->
+   </action>
+    <!-- 设置焦点导读的Action -->
+   <action name="forceForm" parameter="method" path="/forceAction" scope="request" type="com.action.ForceAction" validate="true">
+      <forward name="selectForceAction" path="/b_forceSelect.jsp"/>                           <!-- 后台：返回焦点导读查询页面 -->
+      <forward name="selectOneForceAction" path="/b_forceSelectContent.jsp"/>                 <!-- 后台：焦点导读详细查询页面 -->
+      <forward name="insertForceAction" path="/b_forceInsert.jsp"/>                           <!-- 后台：添加完毕焦点导读内容后，重新定向页面 -->
+      <forward name="queryForceFormAction" path="/b_forceUpdate.jsp" />                       <!-- 后台：进入修改页面 -->       
+      <forward name="updateForceAction" path="/b_forceUpdate.jsp" />                          <!-- 后台：修改完毕焦点导读内容后，重新定向页面 -->
+      <forward name="queryForceAction" path="/f_queryForceList.jsp" />                        <!-- 前台：焦点导读全部查询页面 -->
+      <forward name="queryForceOneAction" path="/f_queryForceForm.jsp"/>  		              <!-- 前台：焦点导读详细内容查看页面 -->
+    </action>  
+    <!--设置新闻模块的Action -->
+    <action name="newsForm" parameter="method" path="/newsAction" scope="request" type="com.action.NewsAction" validate="true">
+       <forward name="selectAllNews" path="/b_queryNewsList.jsp" />							  <!--后台：新闻的全部查询页面  -->
+       <forward name="resultNewsAction" path="/b_resultNews.jsp" />       					  <!--后台：新闻操作结果页面  -->
+       <forward name="selectOneNewsAction" path="/b_newsUpdate.jsp" />                        <!--后台：对新闻的详细查询，转型修改页面  -->
+       <forward name="queryNewsFormAction" path="/b_newsContent.jsp" />                       <!--前台：对新闻的详细查询  -->
+       <forward name="front_queryNewsAction" path="/f_queryNews.jsp" />                       <!--前台：对新闻类别和今日新闻的查询  -->
+       <forward name="front_queryKeyNewsAction" path="/f_keyNewsList.jsp" />                  <!--前台：对新闻关键字的查询  -->
+    </action>
+   <!--设置新闻类别模块的Action -->
+    <action name="sortForm" parameter="method" path="/sortAction" scope="request" type="com.action.SortAction" validate="true">
+      <forward name="selectSortAction" path="/b_querySortList.jsp" />               			  <!-- 后台：新闻类别的查询 -->
+      <forward name="resultSortAction" path="/b_resultSort.jsp" />                                <!-- 后台：新闻类别的添加 -->
+    </action>
+
+   
+
+
+  </action-mappings>
+
+  
+
+  
+   <controller processorClass="com.tools.SelfRequestProcessor" />
+  
+  
+</struts-config>
+

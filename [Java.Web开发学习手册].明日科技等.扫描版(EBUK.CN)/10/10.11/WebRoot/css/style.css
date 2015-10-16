@@ -1,0 +1,71 @@
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<!--
+body {
+	FONT-SIZE: 9pt;
+	margin:0px;
+	/*BACKGROUND-IMAGE: url(../Images/bg.gif);*/
+	SCROLLBAR-FACE-COLOR: #dddddd; 
+	SCROLLBAR-HIGHLIGHT-COLOR: #ffffff;
+	SCROLLBAR-SHADOW-COLOR: #fcfcfc; COLOR: #000000;
+	SCROLLBAR-3DLIGHT-COLOR: #eeeeee;
+	SCROLLBAR-ARROW-COLOR: #ffffff;
+	SCROLLBAR-TRACK-COLOR: #eeeeee;
+	SCROLLBAR-DARKSHADOW-COLOR: #666666;
+	/*BACKGROUND-COLOR: #DDDDDD;*/
+
+}
+image{
+	border-color:#999999;
+}
+td {
+	font-size: 9pt; line-height:144%; 
+}
+a:hover {
+	font-size: 9pt;	color: #CC0000;
+}
+a {
+	font-size: 9pt;	text-decoration: none;	color: #000000;
+}
+.word_white {color: #FFFFFF; font-weight:bold;}
+.word_black {color: #000000; font-weight:bold;}
+.style1 {color: #FFFFFF}
+.style2 {
+	color: #FEBE7E;
+	font-weight: bold;
+	font-size:14px
+}
+
+input {
+	font-family: "宋体";
+	font-size: 9pt;
+	color: #333333;
+	border: 1px solid #999999;
+}
+
+
+hr{
+color:#9CA6C6;
+}
+
+.tableBorder_B_dashed {
+background-image:url(../Images/operationTwo.jpg);
+
+}
+
+.menuitems1{
+	margin:2px;padding:1px;word-break:keep-all;background-image:url("Images/item_out.gif");
+}
+div.quote{margin:5px 20px;border:1px solid #8492b9;padding:5px;background:#8492b9 ;line-height : normal ;
+}
+div.HtmlCode{margin:5px 20px;border:1px solid #AAAAAA;padding:5px; background:#FDFDDF ;
+font-size:12px;font-family:Tahoma;font-style : oblique;line-height : normal ;font-weight:bold;
+}
+.menuskin {
+	BORDER: #666666 1px solid; VISIBILITY: hidden;
+	POSITION: absolute; 
+	/*BACKGROUND-COLOR:#EFEFEF;*/
+	background-image:url("../Images/item_out.gif");
+	background-repeat : repeat-y;
+    Filter: Alpha(Opacity=85);
+	}
+-->

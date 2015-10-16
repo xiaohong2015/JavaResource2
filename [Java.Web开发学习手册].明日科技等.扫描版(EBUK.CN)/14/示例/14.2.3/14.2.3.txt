@@ -1,0 +1,167 @@
+本书中未提供示例的源程序，特将示例关键代码存放在光盘中的.txt文件里，关键代码如下：
+
+<table border="1">
+    <tr bgcolor="lightgrey"><td align="center">请选择文件操作</td></tr>
+    <tr>
+        <td align="center">
+           <a href="up/fileup.jsp">[文件上传]</a>
+           <a href="down/filedown.jsp">[文件下载]</a>
+        </td>
+    </tr>
+</table>
+
+
+
+<%
+   String errors=(String)request.getAttribute("errors");
+   if(errors==null||errors.equals(""))
+       errors="<li>请选择要上传的文件！</li>";
+%>
+<form action="doup.jsp" method="POST" enctype="multipart/form-data">
+   <table border="1">
+     <tr bgcolor="lightgrey"><td align="center" colspan="3"><%=errors%></td></tr>
+     <% for(int i=1;i<3;i++){ %>
+     <tr>
+        <td rowspan="2">文件<%=i%>：</td>
+         <td colspan="2"><input type="file" name="file<%=i%>"></td>
+     </tr>
+     <tr>
+         <td bgcolor="lightgrey">文件描述：</td>
+         <td><input type="text" name="info<%=i%>" maxlength="20"></td>
+     </tr>
+     <% } %>
+     <tr>
+         <td align="right" colspan="3">
+             <input type="submit" value="上传">
+             <input type="reset" value="重置">
+             <a href="../down/filedown.jsp">[文件下载]</a>
+         </td>
+     </tr>
+   </table>
+</form>
+
+
+
+<%@ page import="com.jspsmart.upload.File" %>
+<%@ page import="com.jspsmart.upload.Files" %>
+<jsp:useBean id="myup" class="com.jspsmart.upload.SmartUpload"/>
+<jsp:useBean id="mydb" class="com.fileUD.javabean.DB"/>
+<center>正在上传文件，请稍等……</center>
+<%
+  String filedir="/file/";
+  String errors="";
+  String sql="";
+  long maxsize=2*1024*1024;                         		//设置每个上传文件的大小，为2MB
+  try{
+      myup.initialize(pageContext);
+      myup.setMaxFileSize(maxsize);                		//限制上传文件的大小
+      myup.upload();                                     //上传文件
+      Files files=myup.getFiles();                        	//获取所有的上传文件
+      for(int i=0;i<files.getCount();i++){               		//逐个获取上传的文件
+           File singlefile=files.getFile(i);
+           if(!singlefile.isMissing()){                   		//如果选择了文件
+               String info=myup.getRequest().getParameter("info"+(i+1));  	//获取通用
+                                                                			//表单元素的值
+               String type=singlefile.getContentType();    	//获取文件类型
+               sql="insert into tb_file values('"+singlefile.getFileName()
+                                                        +"','','"+type+"','"+info+"')";
+               int num=mydb.CUD(sql);                	//保存当前文件信息
+               if(num<=0){
+                   errors+="<li>文件"+(i+1)+"上传失败：请检查是否输入了非法字符！</li>";
+               }
+               else{  //获取刚刚保存的文件信息记录的ID值，然后与文件的后缀名组成一个新的文件名
+                   sql="select MAX(id) as maxid from tb_file";
+                   java.sql.ResultSet rs=mydb.Read(sql);
+                   String destname="";
+                   if(rs.next()){
+                       int maxid=rs.getInt("maxid");
+                       destname=maxid+"."+singlefile.getFileExt();
+                       sql="update tb_file set file_save='"+destname+"' where id="+maxid;
+                       num=mydb.CUD(sql);
+                       if(num<=0){
+                           errors+="<li>文件"+(i+1)+"上传失败！</li>";
+                       }
+                       else{          					//保存上传的文件
+                           singlefile.saveAs(filedir+destname,File.SAVEAS_VIRTUAL);
+                           errors+="<li>文件"+(i+1)+"上传成功！</li>";
+                       }
+                   }//if(rs.next())
+               }//else
+           }//if(!singlefile.isMissing())
+      }//for
+      request.setAttribute("errors",errors);
+  }catch(Exception e){
+      request.setAttribute("errors","文件上传失败！");
+      e.printStackTrace();
+  }
+%>
+<jsp:forward page="fileup.jsp"/>
+
+
+
+<%@ page import="java.sql.ResultSet" %>
+<jsp:useBean id="mydb" class="com.fileUD.javabean.DB"/>
+<%
+  String errors=(String)request.getAttribute("errors");
+  if(errors==null||errors.equals(""))
+  errors="<li>请选择要下载的文件！";
+  String sql="select * from tb_file";
+  ResultSet rs=mydb.Read(sql);
+%>
+<table border="1">
+   <tr bgcolor="lightgrey"><td align="center" colspan="3"><%=errors%></td></tr>
+   <tr>
+     <td align="center">文件名</td>
+     <td align="center">文件描述</td>
+     <td align="center">下载</td>
+   </tr>
+   <%
+       if(rs.next()){
+           rs.previous();
+           while(rs.next()){
+               String filename=rs.getString("file_name");
+               String filesave=rs.getString("file_save");
+               String fileinfo=rs.getString("file_info");
+   %>
+   <tr>
+     <td align="center"><%=filename%></td>
+     <td align="center"><%=fileinfo%></td>
+     <td align="center">
+       <a href="dodown.jsp?downfile=<%=filesave%>">[下载]</a>
+   </tr>
+   <%
+           }
+       }
+       else{
+           out.println("<tr><td align='center' colspan='3'>没有文件显示！</td></tr>");
+       }
+   %>
+   <tr><td colspan="3"><a href="../up/fileup.jsp">[文件上传]</a></td></tr>
+</table>
+
+
+
+<jsp:useBean id="mydown" class="com.jspsmart.upload.SmartUpload"/>
+<%
+  String downfile="/file/"+request.getParameter("downfile");
+  try{
+      response.reset();
+      out.clear();
+      out=pageContext.pushBody();
+      mydown.initialize(pageContext);
+      mydown.setContentDisposition(null);
+      mydown.downloadFile(downfile);
+  }catch(Exception e){
+      String errors="<li>文件下载失败：请检查选择的文件是否存在？</li>";
+      request.setAttribute("errors",errors);
+      RequestDispatcher rd=request.getRequestDispatcher("filedown.jsp");
+      rd.forward(request,response);
+  }
+%>
+
+
+
+response.reset();
+out.clear();
+out=pageContext.pushBody();
+

@@ -1,0 +1,9 @@
+本书中未提供示例的源程序，特将示例关键代码存放在光盘中的.txt文件里，关键代码如下：
+
+?NameMatchMethodPointcutAdvisor advice=new NameMatchMethodPointcutAdvisor(new TestAdvice());
+advice.addMethodName(“targetMethod1name”);
+advice.addMethodName(“targetMethod2name”);
+advice.addMethodName(“targetMethod3name”);
+?advice.addMethodName(“targetMethod3name”);
+……//可以继续添加方法的名称
+……//省略创建代理，可以参考上一小节创建AOP代理

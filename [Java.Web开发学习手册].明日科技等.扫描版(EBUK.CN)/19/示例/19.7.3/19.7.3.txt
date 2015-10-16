@@ -1,0 +1,18 @@
+本书中未提供示例的源程序，特将示例关键代码存放在光盘中的.txt文件里，关键代码如下：
+
+public interface Pointcut {
+  	ClassFilter getClassFilter();
+  	MethodMatcher getMethodMatcher();
+}
+使用ClassFilter接口来匹配目标类，代码如下：
+public interface ClassFilter {
+  	boolean matches(Class class);
+}
+
+
+
+public interface MethodMatcher {
+  	boolean matches(Method m,Class targetClass);
+  	boolean isRuntime();
+  	boolean matches(Method m,Class targetClass,Object[] args);
+}

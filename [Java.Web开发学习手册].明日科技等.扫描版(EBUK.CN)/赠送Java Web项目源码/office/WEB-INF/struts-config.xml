@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+  <data-sources />
+  <form-beans >
+    <form-bean name="userform" type="com.office.actionform.UserForm" />
+    <form-bean name="searchform" type="com.office.actionform.SearchForm" />
+    <form-bean name="logonform" type="com.office.actionform.LogonForm" />
+    <form-bean name="textform" type="com.office.actionform.TextForm" />
+    <form-bean name="meetform" type="com.office.actionform.MeetForm" />
+    <form-bean name="pcardform" type="com.office.actionform.PcardForm" />
+    <form-bean name="moneythingform" type="com.office.actionform.MoneyThingForm" />
+    <form-bean name="moneycarform" type="com.office.actionform.MoneyCarForm" />
+    <form-bean name="fileform" type="com.office.actionform.FileForm" />
+    <form-bean name="mailform" type="com.office.actionform.MailForm" />
+    <form-bean name="adviceform" type="com.office.actionform.AdviceForm" />
+    <form-bean name="qqform" type="com.office.actionform.QQ"/>
+  </form-beans>
+
+  <global-exceptions />
+  <global-forwards >
+    <forward name="notallow" path="/Notallow.jsp" />
+    <forward name="notallowlogon" path="/index.jsp" />
+    <forward name="looksiglewrong" path="/Notallow.jsp" />
+  </global-forwards>
+  <action-mappings >
+    <action
+      name="logonform"
+      parameter="logon_no"
+      path="/user/logon"
+      type="com.office.action.LogonAction">
+      <forward name="success" path="/default.jsp" redirect="true"/>
+      <forward name="false" path="/index.jsp"/>
+    </action>
+    <action
+      parameter="index"
+      path="/index"
+      type="com.office.action.LogonAction">
+      <forward name="success" path="/default.jsp" />
+    </action>
+    <action
+      parameter="logon_agin"
+      path="/logonagin"
+      scope="request"
+      type="com.office.action.LogoffAction">
+      <forward name="logon_agin" path="/index.jsp" />
+    </action>
+    <action
+      parameter="logoff"
+      path="/logoff"
+      type="com.office.action.LogoffAction">
+      <forward name="logoff" path="/default.jsp" />
+    </action>
+    <action
+      name="textform"
+      parameter="text_look_get"
+      path="/text/text_look_get"
+      scope="request"
+      type="com.office.action.TextAction">
+      <forward name="success" path="/text/Look_gettext.jsp" />
+    </action>
+    <action
+      name="textform"
+      parameter="text_look_send"
+      path="/text/text_look_send"
+      scope="request"
+      type="com.office.action.TextAction">
+      <forward name="success" path="/text/Look_sendtext.jsp" />
+    </action>
+    <action
+      name="textform"
+      parameter="text_sigle_look"
+      path="/text/text_sigle_look"
+      scope="request"
+      type="com.office.action.TextAction">
+      <forward name="success" path="/text/Look_sigletext.jsp" />
+    </action>
+    <action
+      name="textform"
+      parameter="text_add"
+      path="/text/text_add"
+      scope="request"
+      type="com.office.action.TextAction">
+      <forward name="success" path="/text/Add_text.jsp" />
+      <forward name="false" path="/text/Add_text.jsp" />
+    </action>
+    <action
+      name="textform"
+      parameter="text_del"
+      path="/text/text_del"
+      scope="request"
+      type="com.office.action.TextAction">
+      <forward name="get" path="/text/text_look_get.do" />
+      <forward name="send" path="/text/text_look_send.do" />
+    </action>
+    <action
+      name="meetform"
+      parameter="meet_look"
+      path="/meet/meet_look"
+      scope="request"
+      type="com.office.action.MeetAction">
+      <forward name="success" path="/meet/Look_meet.jsp" />
+    </action>
+    <action
+      name="meetform"
+      parameter="meet_del"
+      path="/meet/meet_del"
+      scope="request"
+      type="com.office.action.MeetAction">
+      <forward name="success" path="/meet/meet_look.do" />
+      <forward name="false" path="/meet/Look_meet.jsp"/>
+    </action>
+    <action
+      name="meetform"
+      parameter="meet_add"
+      path="/meet/meet_add"
+      scope="request"
+      type="com.office.action.MeetAction">
+      <forward name="success" path="/meet/Add_meet.jsp" />
+      <forward name="false" path="/meet/Add_meet.jsp" />
+    </action>
+    <action
+      name="meetform"
+      parameter="meet_sigle_look"
+      path="/meet/meet_sigle_look"
+      scope="request"
+      type="com.office.action.MeetAction">
+      <forward name="success" path="/meet/Look_siglemeet.jsp" />
+      <forward name="false" path="/meet/Look_meet.jsp" />
+    </action>
+    <action
+      name="pcardform"
+      parameter="pcard_look"
+      path="/pcard/pcard_look"
+      scope="request"
+      type="com.office.action.PcardAction">
+      <forward name="success" path="/pcard/Look_pcard.jsp" />
+      <forward name="false" path="/pcard/Look_pcard.jsp" />
+    </action>
+    <action
+      name="pcardform"
+      parameter="pcard_del"
+      path="/pcard/pcard_del"
+      scope="request"
+      type="com.office.action.PcardAction">
+      <forward name="success" path="/pcard/pcard_look.do" />
+      <forward name="false" path="/pcard/Look_pcard.jsp" />
+    </action>
+    <action
+      name="pcardform"
+      parameter="pcard_add"
+      path="/pcard/pcard_add"
+      scope="request"
+      type="com.office.action.PcardAction">
+      <forward name="success" path="/pcard/Add_pcard.jsp" />
+      <forward name="false" path="/pcard/Add_pcard.jsp" />
+    </action>
+    <action
+      name="pcardform"
+      parameter="pcard_sigle_look"
+      path="/pcard/pcard_sigle_look"
+      scope="request"
+      type="com.office.action.PcardAction">
+      <forward name="success" path="/pcard/Look_siglepcard.jsp" />
+      <forward name="false" path="/pcard/Look_pcard.jsp" />
+    </action>
+    <action
+      name="pcardform"
+      parameter="pcard_update"
+      path="/pcard/pcard_update"
+      scope="request"
+      type="com.office.action.PcardAction">
+      <forward name="success" path="/pcard/pcard_look.do" />
+      <forward name="update" path="/pcard/Update_pcard.jsp" /> 
+      <forward name="false" path="/pcard/Update_pcard.jsp" />
+    </action>
+    <action
+      name="searchform"
+      parameter="person_look"
+      path="/person/person_look"
+      scope="request"
+      type="com.office.action.UserAction">
+      <forward name="success" path="/person/Look_person.jsp" />
+      <forward name="false" path="/person/Look_person.jsp" />
+    </action>
+    <action
+      parameter="person_del"
+      path="/person/person_del"
+      scope="request"
+      type="com.office.action.UserAction">
+      <forward name="success" path="/person/person_look.do" />
+      <forward name="false" path="/person/Look_person.jsp" />
+    </action>
+    <action
+      name="userform"
+      parameter="person_update"
+      path="/person/person_update"
+      scope="request"
+      type="com.office.action.UserAction">
+      <forward name="success" path="/person/person_look.do" />
+      <forward name="update" path="/person/Update_person.jsp" />
+      <forward name="false" path="/person/Update_person.jsp" />
+    </action>
+    <action
+      name="userform"
+      parameter="person_sigle_look"
+      path="/person/person_sigle_look"
+      scope="request"
+      type="com.office.action.UserAction">
+      <forward name="success" path="/person/Look_sigle_person.jsp" />
+    </action>
+    <action
+      name="logonform"
+      parameter="person_myself_look"
+      path="/person/person_myself_look"
+      scope="request"
+      type="com.office.action.UserAction">
+      <forward name="success" path="/person/Look_myself.jsp" />
+    </action>
+    <action
+      name="logonform"
+      parameter="person_myself_update"
+      path="/person/person_myself_update"
+      scope="request"
+      type="com.office.action.UserAction">
+      <forward name="success" path="/person/person_myself_look.do" />
+      <forward name="update" path="/person/Update_myself.jsp" />
+      <forward name="false" path="/person/Update_myself.jsp" />
+    </action>
+    <action
+      name="userform"
+      parameter="person_add"
+      path="/person/person_add"
+      scope="request"
+      type="com.office.action.UserAction">
+      <forward name="add" path="/person/Add_person.jsp" />
+      <forward name="success" path="/person/Add_person.jsp" />
+      <forward name="false" path="/person/Add_person.jsp" />
+    </action>
+    <action
+      name="searchform"
+      parameter="person_good"
+      path="/person/person_good"
+      scope="request"
+      type="com.office.action.UserAction">
+      <forward name="success" path="/person/Look_person.jsp" />
+      <forward name="false" path="/person/Look_person.jsp"/>
+    </action>
+    
+    <action
+      parameter="money_look"
+      path="/money/money_look"
+      type="com.office.action.MoneyAction">
+      <forward name="success" path="/money/Look.jsp" />
+    </action>
+     <action
+      name="searchform"
+      parameter="money_things_look"
+      path="/money/money_things_look"
+      scope="request"
+      type="com.office.action.MoneyAction">
+      <forward name="success" path="/money/thing/Look_thing.jsp" />
+      <forward name="false" path="/money/thing/Look_thing.jsp" />
+    </action>
+    
+    <action
+      name="moneythingform"
+      parameter="money_things_add"
+      path="/money/money_things_add"
+      scope="request"
+      type="com.office.action.MoneyAction">
+      <forward name="add" path="/money/thing/Add_thing.jsp" />
+      <forward name="success" path="/money/thing/Add_thing.jsp" />
+      <forward name="false" path="/money/thing/Add_thing.jsp" />
+    </action>
+    <action
+      name="moneythingform"
+      parameter="money_things_update"
+      path="/money/money_things_update"
+      scope="request"
+      type="com.office.action.MoneyAction">
+      <forward name="update" path="/money/thing/Update_thing.jsp" />
+      <forward name="success" path="/money/money_things_look.do" />
+      <forward name="false" path="/money/thing/Update_thing.jsp" />
+    </action>
+    <action
+      parameter="money_things_del"
+      path="/money/money_things_del"
+      type="com.office.action.MoneyAction">
+      <forward name="success" path="/money/money_things_look.do" />
+    </action>
+    <action
+      name="searchform"
+      parameter="money_cars_look"
+      path="/money/money_cars_look"
+      scope="request"
+      type="com.office.action.MoneyAction">
+      <forward name="success" path="/money/car/Look_car.jsp" />
+      <forward name="false" path="/money/car/Look_car.jsp" />
+    </action>
+    <action
+      name="moneycarform"
+      parameter="money_cars_del"
+      path="/money/money_cars_del"
+      scope="request"
+      type="com.office.action.MoneyAction">
+      <forward name="success" path="/money/money_cars_look.do" />
+      <forward name="false" path="/money/car/Look_car.jsp" />
+    </action>
+    <action
+      name="moneycarform"
+      parameter="money_cars_update"
+      path="/money/money_cars_update"
+      scope="request"
+      type="com.office.action.MoneyAction">
+      <forward name="success" path="/money/money_cars_look.do" />
+      <forward name="update" path="/money/car/Update_car.jsp" />
+      <forward name="false" path="/money/car/Update_car.jsp" />
+    </action>
+    <action
+      name="moneycarform"
+      parameter="money_cars_sigle_look"
+      path="/money/money_cars_sigle_look"
+      scope="request"
+      type="com.office.action.MoneyAction">
+      <forward name="success" path="/money/car/Look_siglecar.jsp" />
+    </action>
+    <action
+      name="moneycarform"
+      parameter="money_cars_add"
+      path="/money/money_cars_add"
+      scope="request"
+      type="com.office.action.MoneyAction">
+      <forward name="add" path="/money/car/Add_car.jsp" />
+      <forward name="success" path="/money/car/Add_car.jsp" />
+      <forward name="false" path="/money/car/Add_car.jsp" />
+    </action>    
+    <action
+      name="fileform"
+      parameter="file_look"
+      path="/file/file_look"
+      scope="request"
+      type="com.office.action.FileAction">
+      <forward name="success" path="/file/Look_file.jsp" />
+    </action>
+    <action
+      name="fileform"
+      parameter="file_up"
+      path="/file/file_up"
+      scope="request"
+      type="com.office.action.FileAction">
+      <forward name="up" path="/file/Up_file.jsp" />
+      <forward name="success" path="/file/Up_file.jsp" />
+      <forward name="false" path="/file/Up_file.jsp" />
+    </action>
+    <action
+      name="fileform"
+      parameter="file_del"
+      path="/file/file_del"
+      scope="request"
+      type="com.office.action.FileAction">
+      <forward name="success" path="/file/file_look.do" />
+      <forward name="false" path="/file/Look_file.jsp" />
+    </action>
+    <action
+      name="fileform"
+      parameter="file_download"
+      path="/file/file_download"
+      scope="request"
+      type="com.office.action.FileAction">
+      <forward name="success" path="/file/Look_file.jsp" />
+      <forward name="false" path="/file/Look_file.jsp" />
+    </action>
+    <action
+      name="mailform"
+      parameter="mail_look_get"
+      path="/mail/mail_look_get"
+      scope="request"
+      type="com.office.action.MailAction">
+      <forward name="success" path="/mail/Look_getmail.jsp" />
+    </action>
+    <action
+      name="mailform"
+      parameter="mail_look_send"
+      path="/mail/mail_look_send"
+      scope="request"
+      type="com.office.action.MailAction">
+      <forward name="success" path="/mail/Look_sendmail.jsp" />
+    </action>
+    <action
+      name="mailform"
+      parameter="mail_look_sigle"
+      path="/mail/mail_look_sigle"
+      scope="request"
+      type="com.office.action.MailAction">
+      <forward name="success" path="/mail/Look_siglemail.jsp" />
+    </action>
+    <action
+      parameter="mail_del"
+      path="/mail/mail_del"
+      type="com.office.action.MailAction">
+      <forward name="send" path="/mail/mail_look_send.do" />
+      <forward name="get" path="/mail/mail_look_get.do" />
+    </action>
+    <action
+      name="mailform"
+      parameter="mail_add"
+      path="/mail/mail_add"
+      scope="request"
+      type="com.office.action.MailAction">
+      <forward name="add" path="/mail/Add_mail.jsp" />
+      <forward name="success" path="/mail/Add_mail.jsp" />
+      <forward name="false" path="/mail/Add_mail.jsp" />
+    </action>    
+    <action
+      name="searchform"
+      parameter="advice_look"
+      path="/advice/advice_look"
+      scope="request"
+      type="com.office.action.AdviceAction">
+      <forward name="success" path="/advice/Look_advice.jsp" />
+      <forward name="false" path="/advice/Look_advice.jsp" />
+    </action>
+    <action
+      name="adviceform"
+      parameter="advice_look_sigle"
+      path="/advice/advice_look_sigle"
+      scope="request"
+      type="com.office.action.AdviceAction">
+      <forward name="success" path="/advice/Look_sigleadvice.jsp" />
+      <forward name="false" path="/advice/Look_advice.jsp" />
+    </action>
+    <action
+      parameter="advice_del"
+      path="/advice/advice_del"
+      type="com.office.action.AdviceAction">
+      <forward name="success" path="/advice/advice_look.do" />
+      <forward name="false" path="/advice/Look_advice.jsp" />
+    </action>    
+
+    <action
+      name="adviceform"
+      parameter="advice_add"
+      path="/advice/advice_add"
+      scope="request"
+      type="com.office.action.AdviceAction">
+      <forward name="add" path="/advice/Add_advice.jsp" />
+      <forward name="success" path="/advice/Add_advice.jsp" />
+      <forward name="false" path="/advice/Add_advice.jsp" />
+    </action>
+    </action-mappings>    
+    <controller processorClass="com.office.tools.FormToChinese"/>
+    <message-resources parameter="com.office.ApplicationResources" />
+</struts-config>

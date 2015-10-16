@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"
+  version="2.0">
+  <description>library</description>
+  <display-name>functions</display-name>
+  <tlib-version>1.1</tlib-version>
+  <short-name>fn</short-name>
+  <function>
+    <description>reverse</description>
+    <name>reverse</name>
+    <function-class>com.KindMethod</function-class>
+    <function-signature>java.lang.String reverse( java.lang.String )</function-signature>
+  </function>
+   <function>
+    <description>cape</description>
+    <name>cape</name>
+    <function-class>com.KindMethod</function-class>
+    <function-signature>java.lang.String cape( java.lang.String )</function-signature>
+  </function>
+</taglib>

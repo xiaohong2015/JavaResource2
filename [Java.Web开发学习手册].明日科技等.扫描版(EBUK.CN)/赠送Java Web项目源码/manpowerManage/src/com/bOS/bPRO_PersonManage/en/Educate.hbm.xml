@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.bOS.bPRO_PersonManage.en.Educate" table="tb_educate" lazy="false">
+<id column="id" name="id" type="long">
+<generator class="native"/>
+</id>
+<property column="name" length="100" name="name" type="string"/>
+<property column="purpose" length="500" name="purpose" type="string"/>
+<property column="begintime" length="23" name="begintime" type="timestamp"/>
+<property column="endtime" length="23" name="endtime" type="timestamp"/>
+<property column="datum" length="2000" name="datum" type="string"/>
+<property column="teacher" length="50" name="teacher" type="string"/>
+<property column="student" length="50" name="student" type="string"/>
+<property column="createtime" length="23" name="createtime" type="timestamp"/>
+<property column="effect" length="500" name="effect" type="string"/>
+<property column="educate" length="1" name="educate" type="byte"/>
+<property column="summarize" length="2000" name="summarize" type="string"/>
+</class>
+</hibernate-mapping>

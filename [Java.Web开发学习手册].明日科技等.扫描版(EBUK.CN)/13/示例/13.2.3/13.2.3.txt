@@ -1,0 +1,14 @@
+本书中未提供示例的源程序，特将示例关键代码存放在光盘中的.txt文件里，关键代码如下：
+
+try {
+    this.stmt = this.conn.createStatement();
+    stmt.clearBatch();      					// 清除位于Batch中的所有SQL语句
+    for (int i = 0; i < names.length; i++) {      		// 通过循环向Batch中添加欲执行的SQL语句
+        stmt.addBatch("insert into tb_batch(id,name) values(" + (i + 1)
+                + ",'" + names[i] + "')");
+    }
+    stmt.executeBatch();      				// 批量执行Batch中的SQL语句
+    stmt.close();
+} catch (SQLException e) {
+    e.printStackTrace();
+}

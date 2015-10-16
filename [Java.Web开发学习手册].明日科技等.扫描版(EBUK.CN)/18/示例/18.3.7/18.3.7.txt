@@ -1,0 +1,16 @@
+本书中未提供示例的源程序，特将示例关键代码存放在光盘中的.txt文件里，关键代码如下：
+
+<!-- 产品信息字段配置信息 -->
+<hibernate-mapping>
+ 	<class name="com.mr.product.Product" table="tab_product">
+ 		<!-- id值 -->
+ 		<id name="id" column="id" type="int">
+			<generator class="native"/>
+		</id>
+		<!-- 产品名称 -->
+		<property name="name" type="string" length="45" lazy="true">
+			<column name="name"/>
+		</property>
+		……
+ 	</class>
+</hibernate-mapping>

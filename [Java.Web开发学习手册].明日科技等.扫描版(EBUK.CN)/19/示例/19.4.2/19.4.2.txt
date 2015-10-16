@@ -1,0 +1,8 @@
+本书中未提供示例的源程序，特将示例关键代码存放在光盘中的.txt文件里，关键代码如下：
+
+<!-- 1.默认即为singleton作用域 -->
+<bean id="test" class="com.mr.Test"/>
+<!-- 2.将singleton属性设置为true -->
+<bean id="test" class="com.mr.Test" singleton="true"/>
+<!-- 3.利用scope属性指定 -->
+<bean id="test" class="com.mr.Test" scope="singleton"/>

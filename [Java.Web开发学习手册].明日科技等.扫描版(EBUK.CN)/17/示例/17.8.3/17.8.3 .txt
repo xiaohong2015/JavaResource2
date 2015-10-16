@@ -1,0 +1,31 @@
+本书中未提供示例的源程序，特将示例关键代码存放在光盘中的.txt文件里，关键代码如下：
+
+<validators>
+	<!-- 验证用户名 -->
+	<field name="username">
+		<field-validator type="requiredstring">
+			<message>请输入用户名</message>
+		</field-validator>
+	</field>
+	<!-- 验证密码 -->
+	<field name="password">
+		<field-validator type="requiredstring">
+			<message>请输入密码</message>
+		</field-validator>
+	</field>
+</validators>
+
+
+
+<validators>
+	<validator type="requiredstring">
+		<!-- 验证用户名字段 -->
+		<param name="fieldName">password</param>
+		<!-- 验证密码字段 -->
+		<param name="fieldName">username</param>
+		<message>请输入内容</message>
+	</validator>
+</validators>
+
+
+

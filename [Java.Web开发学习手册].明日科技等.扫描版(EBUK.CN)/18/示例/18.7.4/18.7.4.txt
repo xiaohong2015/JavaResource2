@@ -1,0 +1,14 @@
+本书中未提供示例的源程序，特将示例关键代码存放在光盘中的.txt文件里，关键代码如下：
+
+session = HibernateUtil.getSession();						// 获得session对象
+String hql = "from Employee emp where emp.sex=?";			// 查询HQL语句
+Query q = session.createQuery(hql);						// 执行查询操作
+q.setParameter(0, "男");								// 为占位符赋值
+emplist = q.list();
+
+
+session = HibernateUtil.getSession();						// 获得session对象
+String hql = "from Employee emp where emp.sex=:sex";		// 查询HQL语句
+Query q = session.createQuery(hql);						// 执行查询操作
+q.setParameter("sex", "男");							// 为引用占位符赋值
+emplist = q.list();

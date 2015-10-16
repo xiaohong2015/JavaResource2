@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.bOS.bPRO_PersonManage.en.Users" table="tb_users" lazy="false">
+<id column="id" name="id" type="long">
+<generator class="native"/>
+</id>
+<property column="username" length="50" name="username" type="string"/>
+<property column="password" length="50" name="password" type="string"/>
+<property column="sex" length="1" name="sex" type="byte"/>
+<property column="birthday" length="23" name="birthday" type="timestamp"/>
+<property column="createtime" length="23" name="createtime" type="timestamp"/>
+<property column="isadmin" length="1" name="isadmin" type="byte"/>
+<property column="content" length="2000" name="content" type="string"/>
+</class>
+</hibernate-mapping>

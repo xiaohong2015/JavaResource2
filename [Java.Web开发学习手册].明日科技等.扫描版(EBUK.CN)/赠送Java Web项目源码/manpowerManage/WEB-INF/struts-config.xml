@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+  <form-beans>
+      <form-bean name="userForm" type="com.bOS.bPRO_PersonManage.actionform.UsersForm" />
+      <form-bean name="jobForm" type="com.bOS.bPRO_PersonManage.actionform.JobForm" />
+      <form-bean name="educateForm" type="com.bOS.bPRO_PersonManage.actionform.EducateForm" />
+      <form-bean name="institutionForm" type="com.bOS.bPRO_PersonManage.actionform.InstitutionForm" />
+      <form-bean name="stipendForm" type="com.bOS.bPRO_PersonManage.actionform.StipendForm" />
+  </form-beans>
+
+  <global-forwards>
+    <forward name="error" path="/error.jsp" />
+  </global-forwards>
+  
+  <action-mappings>
+
+	<action path="/index" forward="/welcome.jsp" />
+    <action path="/main" forward="/main.jsp" />
+    <action path="/adduser" forward="/adduser.jsp" />
+    <action path="/addjob" forward="/addjob.jsp" />
+    <action path="/addeducate" forward="/addeducate.jsp" />
+    <action path="/addinstitution" forward="/addinstitution.jsp" />
+    <action path="/addstipend" forward="/addstipend.jsp" />
+
+	<!-- UsersAction -->
+    <action path="/logon" type="com.bOS.bPRO_PersonManage.action.UsersAction" name="userForm" scope="request">
+      <forward name="success" path="/logon_ok.jsp" />
+      <forward name="failed" path="/failed.jsp" />
+    </action>
+    <action path="/user" type="com.bOS.bPRO_PersonManage.action.UsersAction" name="userForm" scope="request">
+      <forward name="success" path="/listuser.jsp" />
+    </action>
+    <action path="/modifyuser" type="com.bOS.bPRO_PersonManage.action.UsersAction" name="userForm" scope="session">
+      <forward name="success" path="/user.do?action=listuser" />
+    </action>
+    <action path="/selectuser" type="com.bOS.bPRO_PersonManage.action.UsersAction" scope="request">
+      <forward name="success" path="/updateuser.jsp" />
+    </action>
+
+	<!-- JobAction -->
+    <action path="/job" type="com.bOS.bPRO_PersonManage.action.JobAction" name="jobForm" scope="request">
+      <forward name="success" path="/listjob.jsp" />
+    </action>
+    <action path="/modifyjob" type="com.bOS.bPRO_PersonManage.action.JobAction" name="jobForm" scope="session">
+      <forward name="success" path="/job.do?action=listjob" />
+    </action>
+    <action path="/detailjob" type="com.bOS.bPRO_PersonManage.action.JobAction" scope="request">
+      <forward name="success" path="/detailjob.jsp" />
+    </action>
+    <action path="/updatejob" type="com.bOS.bPRO_PersonManage.action.JobAction" scope="request">
+      <forward name="success" path="/updatejob.jsp" />
+    </action>
+
+	<!-- EducateAction -->
+    <action path="/educate" type="com.bOS.bPRO_PersonManage.action.EducateAction" name="educateForm" scope="request">
+      <forward name="success" path="/listeducate.jsp" />
+    </action>
+    <action path="/modifyeducate" type="com.bOS.bPRO_PersonManage.action.EducateAction" name="educateForm" scope="session">
+      <forward name="success" path="/educate.do?action=listeducate" />
+    </action>
+    <action path="/detaileducate" type="com.bOS.bPRO_PersonManage.action.EducateAction" scope="request">
+      <forward name="success" path="/detaileducate.jsp" />
+    </action>
+    <action path="/updateeducate" type="com.bOS.bPRO_PersonManage.action.EducateAction" scope="request">
+      <forward name="success" path="/updateeducate.jsp" />
+    </action>
+
+	<!-- InstitutionAction -->
+    <action path="/institution" type="com.bOS.bPRO_PersonManage.action.InstitutionAction" name="institutionForm" scope="request">
+      <forward name="success" path="/listinstitution.jsp" />
+    </action>
+    <action path="/modifyinstitution" type="com.bOS.bPRO_PersonManage.action.InstitutionAction" name="institutionForm" scope="session">
+      <forward name="success" path="/institution.do?action=listinstitution" />
+    </action>
+    <action path="/detailinstitution" type="com.bOS.bPRO_PersonManage.action.InstitutionAction" scope="request">
+      <forward name="success" path="/detailinstitution.jsp" />
+    </action>
+    <action path="/updateinstitution" type="com.bOS.bPRO_PersonManage.action.InstitutionAction" scope="request">
+      <forward name="success" path="/updateinstitution.jsp" />
+    </action>
+
+	<!-- StipendAction -->
+    <action path="/stipend" type="com.bOS.bPRO_PersonManage.action.StipendAction" name="stipendForm" scope="request">
+      <forward name="success" path="/liststipend.jsp" />
+    </action>
+    <action path="/modifystipend" type="com.bOS.bPRO_PersonManage.action.StipendAction" name="stipendForm" scope="session">
+      <forward name="success" path="/stipend.do?action=liststipend" />
+    </action>
+    <action path="/detailstipend" type="com.bOS.bPRO_PersonManage.action.StipendAction" scope="request">
+      <forward name="success" path="/detailstipend.jsp" />
+    </action>
+    <action path="/updatestipend" type="com.bOS.bPRO_PersonManage.action.StipendAction" scope="request">
+      <forward name="success" path="/updatestipend.jsp" />
+    </action>
+
+  </action-mappings>
+    <controller processorClass="com.bOS.bPRO_PersonManage.action.SelfRequestProcessor" />
+</struts-config>

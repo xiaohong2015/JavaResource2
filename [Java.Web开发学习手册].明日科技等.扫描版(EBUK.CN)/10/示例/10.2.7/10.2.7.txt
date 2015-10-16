@@ -1,0 +1,21 @@
+本书中未提供示例的源程序，特将示例关键代码存放在光盘中的.txt文件里，关键代码如下：
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+public class MyServlet extends HttpServlet {
+private static final long serialVersionUID = 1L;
+public MyServlet() {
+		//构造方法
+}
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
+		throws ServletException, IOException {
+		//生成的doGet方法
+	}
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
+		throws ServletException, IOException {
+		//生成的doPost方法
+	}
+}

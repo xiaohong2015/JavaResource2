@@ -1,0 +1,59 @@
+本书中未提供示例的源程序，特将示例关键代码存放在光盘中的.txt文件里，关键代码如下：
+
+<action name="userAction" class="com.lyq.action.UserAction" method="save">
+	<result>success.jsp</result>
+</action>
+
+
+
+package com.lyq.action;
+import com.opensymphony.xwork2.ActionSupport;
+/**
+ * 用户信息管理Action
+ * @author Li Yongqiang
+ */
+public class UserAction extends ActionSupport{
+	private static final long serialVersionUID = 1L;
+	// 添加用户信息
+	public String save() throws Exception {
+		...
+		return SUCCESS;
+	}
+	// 修改用户信息
+	public String update() throws Exception {
+		...
+		return SUCCESS;
+	}
+	// 删除用户信息
+	public String delete() throws Exception {
+		...
+		return SUCCESS;
+	}
+	// 查询用户信息
+	public String find() throws Exception {
+		...
+		return SUCCESS;
+	}
+}
+
+
+
+<!-- 添加用户 -->
+<action name="userAction" class="com.lyq.action.UserAction" method="save">
+	<result>success.jsp</result>
+</action>
+<!-- 修改用户 -->
+<action name="userAction" class="com.lyq.action.UserAction" method="update">
+	<result>success.jsp</result>
+</action>
+<!-- 删除用户 -->
+<action name="userAction" class="com.lyq.action.UserAction" method="delete">
+	<result>success.jsp</result>
+</action>
+<!-- 查询用户 -->
+<action name="userAction" class="com.lyq.action.UserAction" method="find">
+	<result>success.jsp</result>
+</action>
+
+
+

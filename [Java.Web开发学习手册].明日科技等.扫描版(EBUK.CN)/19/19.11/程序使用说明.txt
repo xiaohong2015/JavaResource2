@@ -1,0 +1,1 @@
+本程序使用到cglib-nodep-2.1_3.jarcglib-nodep-2.1_3.jar、commons-logging-1.0.4.jar、mysql-connector-java-5.1.10-bin.jar、spring.jar、spring-web.jar、spring-webmvc.jar包，由于不是本公司自主开发的，请读者自行下载。

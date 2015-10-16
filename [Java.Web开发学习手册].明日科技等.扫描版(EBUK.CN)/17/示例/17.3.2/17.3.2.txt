@@ -1,0 +1,17 @@
+本书中未提供示例的源程序，特将示例关键代码存放在光盘中的.txt文件里，关键代码如下：
+
+public class UserAction extends ActionSupport {
+	// 用户名属性
+	private String username;
+	// 为username提供setter方法
+	public void setUsername(String username) {
+		this.username = username;
+	}
+	// 为username提供getter方法
+	public String getUsername() {
+		return username;
+	}
+	public String execute() {
+		return SUCCESS;
+	}
+}

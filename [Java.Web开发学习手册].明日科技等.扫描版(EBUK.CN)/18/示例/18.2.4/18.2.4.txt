@@ -1,0 +1,20 @@
+本书中未提供示例的源程序，特将示例关键代码存放在光盘中的.txt文件里，关键代码如下：
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- 对持久化类User的映射配置 -->
+<hibernate-mapping>
+	<class name="com.mr.User" table="tb_user">
+		<!-- 持久化类的唯一性标识 -->
+		<id name="id" column="id" type="int">
+			<generator class="native"/>
+		</id>
+		<property name="name" type="string" not-null="true" length="50">
+			<column name="name"/>
+		</property>
+		<property name="password" type="string" not-null="true" length="50">
+			<column name="password"/>
+		</property>
+	</class>
+</hibernate-mapping>

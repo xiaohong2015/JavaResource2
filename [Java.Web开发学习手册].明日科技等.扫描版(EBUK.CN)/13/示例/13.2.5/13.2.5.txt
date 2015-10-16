@@ -1,0 +1,31 @@
+本书中未提供示例的源程序，特将示例关键代码存放在光盘中的.txt文件里，关键代码如下：
+
+ResultSetMetaData rsmd=rs.getMetaData();
+for(int i=1;i<=rsmd.getColumnCount();i++){
+     out.println("<td>"+rsmd.getColumnName(i)+"</td>");
+}
+
+
+stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,
+        ResultSet.CONCUR_UPDATABLE);
+
+
+rs = stmt.executeQuery("select * from tb_iud");
+rs.absolute(3);      				// 将指针移至第3条记录
+rs.updateString(2, "update");      	// 将第二个字段修改update
+rs.updateRow();      			// 将修改操作同步到数据库
+
+
+rs = stmt.executeQuery("select * from tb_iud");
+rs.moveToInsertRow();      		// 将指针移至插入行
+rs.updateInt(1, 4);      			// 设置欲插入行的第一个字段
+rs.updateString(2, "insert");      	// 设置欲插入行的第二个字段
+rs.insertRow();      				// 将插入操作同步到数据库
+
+
+
+rs = stmt.executeQuery("select * from tb_iud");
+rs.next();      		// 将指针移至下一条记录，即第一条
+rs.deleteRow();      // 删除该记录
+rs.close();      	// 将删除操作同步到数据库
+
